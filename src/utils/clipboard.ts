@@ -1,4 +1,4 @@
-export const copyToClipboard = async (text) => {
+export const copyToClipboard = async (text: any) => {
   if (navigator.clipboard) {
     try {
       await navigator.clipboard.writeText(text);

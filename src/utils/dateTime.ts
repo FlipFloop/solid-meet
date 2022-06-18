@@ -1,4 +1,4 @@
-export function showTime() {
+export const showTime = () => {
   return new Date().toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
@@ -6,6 +6,6 @@ export function showTime() {
   });
 }
 
-export function showDate() {
+export const showDate = () => {
   return new Date().toDateString();
 }

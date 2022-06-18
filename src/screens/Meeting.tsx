@@ -19,14 +19,14 @@ export default function Meeting() {
   return (
     <>
       <Show when={!store.error} fallback={<Error error={store.error} />}>
-        <div className="bg-gray-900" style={{ height: "90vh" }}>
+        <div class="bg-gray-900" style={{ height: "90vh" }}>
           <Switch>
             <Match when={store.currentStream && !store.remoteStream}>
-              <section className="h-full grid place-items-center">
+              <section class="h-full grid place-items-center">
                 <Show
                   when={store.webCam}
                   fallback={
-                    <Avatar className="w-40 h-40">
+                    <Avatar class="w-40 h-40">
                       <FaSolidUser />
                     </Avatar>
                   }
@@ -36,12 +36,12 @@ export default function Meeting() {
               </section>
             </Match>
             <Match when={store.currentStream && store.remoteStream}>
-              <div className="h-full relative grid md:grid-cols-2 md:gap-4 place-items-center md:static">
-                <section className="grid place-items-center">
+              <div class="h-full relative grid md:grid-cols-2 md:gap-4 place-items-center md:static">
+                <section class="grid place-items-center">
                   <Show
                     when={store.remoteStream && store.remoteWebCam}
                     fallback={
-                      <Avatar className="w-40 h-40">
+                      <Avatar class="w-40 h-40">
                         <FaSolidUser />
                       </Avatar>
                     }
@@ -49,11 +49,11 @@ export default function Meeting() {
                     <Stream stream={store.remoteStream} name="Remote" />
                   </Show>
                 </section>
-                <section className=" grid place-items-center absolute w-40 h-40 bottom-0 right-0 my-4 md:static md:w-auto md:h-auto md:my-0">
+                <section class=" grid place-items-center absolute w-40 h-40 bottom-0 right-0 my-4 md:static md:w-auto md:h-auto md:my-0">
                   <Show
                     when={store.currentStream && store.webCam}
                     fallback={
-                      <Avatar className="w-20 h-20 md:w-40 md:h-40 text-3xl md:text-6xl">
+                      <Avatar class="w-20 h-20 md:w-40 md:h-40 text-3xl md:text-6xl">
                         <FaSolidUser />
                       </Avatar>
                     }
@@ -66,10 +66,10 @@ export default function Meeting() {
           </Switch>
         </div>
         <div
-          className="bg-gray-800 grid place-items-center"
+          class="bg-gray-800 grid place-items-center"
           style={{ height: "10vh" }}
         >
-          <section className="flex items-center space-x-4">
+          <section class="flex items-center space-x-4">
             <Mic muted={store.muted} toggleMic={toggleMic} />
             <WebCam webCam={store.webCam} toggleWebCam={toggleWebCam} />
             <EndCall endCall={endCall} />

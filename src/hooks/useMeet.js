@@ -52,7 +52,7 @@ export default function useMeet() {
     });
 
     store.socket.on("offer", (data) => {
-      console.info("incomming remote offer:-",data)
+      console.info("incomming remote offer:-", data);
       setStore("incommingCall", true);
       setStore("incommingPayload", data);
     });
@@ -158,7 +158,7 @@ export default function useMeet() {
   }
 
   function handleRecieveCall(data) {
-    console.log("receive incomming call")
+    console.log("receive incomming call");
     const peer = createPeer();
     const desc = new RTCSessionDescription(data.sdp);
     peer
@@ -169,11 +169,11 @@ export default function useMeet() {
           .forEach((track) => peer.addTrack(track, store.currentStream));
       })
       .then(() => {
-        console.info("create answer")
+        console.info("create answer");
         return peer.createAnswer();
       })
       .then((answer) => {
-        console.info("answer created successfully:-",answer)
+        console.info("answer created successfully:-", answer);
         return peer.setLocalDescription(answer);
       })
       .then(() => {
@@ -183,7 +183,7 @@ export default function useMeet() {
           sdp: peer.localDescription,
         };
         store.socket.emit("answer", payload);
-        console.info("sent answer to remote.")
+        console.info("sent answer to remote.");
       });
   }
 
@@ -194,7 +194,7 @@ export default function useMeet() {
   }
 
   function handleICECandidateEvent(e) {
-    console.info("gathering your ice candidate")
+    console.info("gathering your ice candidate");
     if (e.candidate) {
       console.log("your ice-candidate:-", e.candidate);
       const payload = {

@@ -10,9 +10,9 @@ export default function JoinMeeting() {
     navigate(`/${meetCode()}`);
   }
   return (
-    <form className="flex items-center space-x-2" onSubmit={[handleJoin]}>
+    <form class="flex items-center space-x-2" onSubmit={[handleJoin]}>
       <div class="group relative">
-        <BsKeyboardFill className="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-blue-500 text-xl" />
+        <BsKeyboardFill class="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-blue-500 text-xl" />
 
         <input
           class="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 placeholder:text-md rounded-md py-3 pl-10 ring-1 ring-slate-200 shadow-sm"
@@ -24,7 +24,7 @@ export default function JoinMeeting() {
         />
       </div>
       <button
-        className="text-blue-500 hover:bg-gray-700 px-3 py-3 rounded font-bold disabled:text-gray-400 disabled:hover:bg-gray-600 disabled:cursor-not-allowed"
+        class="text-blue-500 hover:bg-gray-700 px-3 py-3 rounded font-bold disabled:text-gray-400 disabled:hover:bg-gray-600 disabled:cursor-not-allowed"
         type="submit"
         disabled={!meetCode().trim().length}
       >
